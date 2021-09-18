@@ -7,7 +7,7 @@
         "start": "nodemon --inspect src/index.js",
         "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write src/**/*.{js,json,scss}"
+        "beautiful": "lint-staged"
     },
     "repository": {
         "type": "git",
@@ -23,17 +23,14 @@
         "url": "https://github.com/duongdinh24/nodejs_blog/issues"
     },
     "homepage": "https://github.com/duongdinh24/nodejs_blog#readme",
-
     "lint-staged": {
         "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
     },
-
     "husky": {
         "hook": {
             "pre-commit": "lint-staged"
         }
     },
-
     "dependencies": {
         "express": "^4.17.1",
         "express-handlebars": "^5.3.3"
