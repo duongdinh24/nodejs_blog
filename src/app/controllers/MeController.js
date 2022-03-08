@@ -1,15 +1,16 @@
 const Post = require('../models/Post');
 const {mutipleMongooseToObject} = require('../../util/mongoose');
-class SiteController {
+
+class MeController {
     //[GET/home]
-    index(req, res, next) {
+    storedPosts(req, res, next) {
         Post.find({})
             .then( posts => {
-                res.render('home', { posts: mutipleMongooseToObject(posts)
+                res.render('me/stored-posts', { posts: mutipleMongooseToObject(posts)
                 });
             })
             .catch(next);
     }
 }
 
-module.exports = new SiteController();
+module.exports = new MeController();
